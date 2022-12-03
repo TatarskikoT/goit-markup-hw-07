@@ -389,7 +389,7 @@ textarea {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.section-title {
+.section__title {
   margin: 0;
   margin-bottom: 50px;
   font-size: 36px;
@@ -397,15 +397,18 @@ textarea {
   text-align: center;
   color: var(--secondary-text-color);
 }
-.specialities .section-title,
-.projects .section-title {
+.specialities .section__title,
+.projects .section__title {
   position: absolute;
-  left: -9999px;
-  top: -9999px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* -------------------specialities--------------- */
-.specialities .subtitle {
+.specialities__subtitle {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -419,36 +422,32 @@ textarea {
 
   background-color: var(--secondary-white-color);
 }
-.icon-area .icon {
+.specialities__icon {
   width: 70px;
   height: 70px;
 }
-.card-list {
+.cardset {
   display: flex;
   flex-wrap: wrap;
 }
-.specialities .card {
+.specialities__card {
   width: 270px;
 }
-.specialities .card + .card {
+.specialities__card + .specialities__card {
   margin-left: 30px;
 }
-.project-desc {
-  border-right: 1px solid var(--primary-grey-color);
-  border-bottom: 1px solid var(--primary-grey-color);
-  border-left: 1px solid var(--primary-grey-color);
-}
+
 /* ------------------------activity----------------- */
-.section.activity {
+.section__activity {
   padding-top: 0;
 }
-.activity .card + .card {
+.activity__card + .activity__card {
   margin-left: 30px;
 }
-.activity-item {
+.activity__item {
   position: relative;
 }
-.activity-text {
+.activity__text {
   position: absolute;
 
   display: flex;
@@ -623,6 +622,11 @@ textarea {
 .project-link:focus .project-overlay {
   top: 0;
   transition: var(--std-timing) var(--std-time-func);
+}
+.project-desc {
+  border-right: 1px solid var(--primary-grey-color);
+  border-bottom: 1px solid var(--primary-grey-color);
+  border-left: 1px solid var(--primary-grey-color);
 }
 .projects .subtitle {
   margin-left: 24px;
