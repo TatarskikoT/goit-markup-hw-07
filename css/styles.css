@@ -45,8 +45,9 @@ img {
     box-shadow var(--std-timing) var(--std-time-func),
     transform var(--std-timing) var(--std-time-func);
 }
-.subtitle {
+p {
   margin: 0;
+  padding: 0;
 }
 .text {
   margin: 0;
@@ -126,8 +127,9 @@ img {
 }
 .nav__link,
 .header__link,
-.specialities .subtitle {
+.specialities__subtitle {
   line-height: calc(16 / 14);
+  color: var(--secondary-text-color);
 }
 .header__link {
   display: flex;
@@ -438,7 +440,7 @@ textarea {
 }
 
 /* ------------------------activity----------------- */
-.section__activity {
+.activity {
   padding-top: 0;
 }
 .activity__card + .activity__card {
@@ -467,39 +469,39 @@ textarea {
   background-color: rgba(47, 48, 58, 0.8);
 }
 /* ---------------------team----------------------- */
-.section.team {
-  background-color: var(--secondary-white-color);
-}
-.team .card {
-  padding-bottom: 30px;
-}
-.team .card + .card {
-  margin-left: 30px;
-}
-.team .card + .card:nth-child(4n + 1) {
-  margin-left: 0;
-}
-.team .member-pic {
-  padding-bottom: 30px;
-}
 .team {
   margin-left: auto;
   margin-right: auto;
 
   font-size: 16px;
   line-height: calc(19 / 16);
+  background-color: var(--secondary-white-color);
 }
-.team .subtitle {
+.team__card + .team__card {
+  margin-left: 30px;
+}
+.team__card + .team__card:nth-child(4n + 1) {
+  margin-left: 0;
+}
+.team__member-pic {
+  margin-bottom: 30px;
+}
+.team__subtitle {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 16px;
-  margin-bottom: 10px;
 }
-.card .text {
+.team__text {
   margin-bottom: 16px;
 
   font-size: 16px;
 }
-.team .card {
+.team__card {
+  padding-bottom: 30px;
   text-align: center;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -507,57 +509,62 @@ textarea {
   background-color: var(--primary-white-color);
 }
 .socials,
-.social-link,
-.client-link {
+.socials__link,
+.clients__link {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.socials .item + .item {
+.socials__item + .socials__item {
   margin-left: 10px;
 }
-.social-link {
+.socials__link {
+  text-decoration: none;
   width: 44px;
   height: 44px;
   border: none;
   background-color: inherit;
   border-radius: 50%;
   color: #afb1b8;
+  transition-property: color, background-color;
+  transition: var(--std-timing) var(--std-time-func);
 }
-.link.social-link:hover,
-.link.social-link:focus {
+.socials__link:hover,
+.socials__link:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
-.link-icon {
+.socials__icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
 /* ---------------------clients----------------------- */
-.client-selector {
+.clients__list {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.client + .client {
+.clients__item + .clients__item {
   margin-left: 30px;
 }
-.client-link {
+.clients__link {
   width: 168px;
   height: 90px;
   color: #afb1b8;
   background-color: inherit;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: color, border-color;
+  transition: var(--std-timing) var(--std-time-func);
 }
-.client-link:hover,
-.client-link:focus {
+.clients__link:hover,
+.clients__link:focus {
   cursor: pointer;
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
-.client-logo {
+.clients__logo {
   width: 106px;
   height: 60px;
   fill: currentColor;
@@ -628,7 +635,7 @@ textarea {
   border-bottom: 1px solid var(--primary-grey-color);
   border-left: 1px solid var(--primary-grey-color);
 }
-.projects .subtitle {
+.projects__subtitle {
   margin-left: 24px;
   margin-bottom: 4px;
   padding-top: 20px;
@@ -709,10 +716,7 @@ textarea {
 .footer-div.social {
   margin-left: 70px;
 }
-.subtitle {
-  color: var(--secondary-text-color);
-}
-.footer .social-link {
+.footer .socials__link {
   color: var(--primary-white-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
