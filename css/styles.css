@@ -1,6 +1,6 @@
-html {
+/* html {
   box-sizing: border-box;
-}
+} */
 
 *,
 *::before,
@@ -19,14 +19,14 @@ html {
   --std-time-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
+/* body {
   font-family: "Roboto", Verdana, sans-serif;
   font-size: 14px;
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
   background-color: var(--primary-white-color);
-}
+} */
 img {
   display: block;
 }
@@ -63,8 +63,6 @@ p {
   text-decoration: none;
   width: 145px;
   height: 31px;
-  left: 215px;
-  top: 24px;
 
   font-family: "Raleway";
   font-style: normal;
@@ -123,7 +121,7 @@ p {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-  color: inherit;
+  color: var(--primary-text-color);
   font-weight: 500;
 }
 .nav__link,
@@ -289,7 +287,6 @@ textarea:focus,
   padding-left: 32px;
 }
 textarea {
-  width: 100%;
   min-height: 120px;
   resize: none;
   padding: 12px 16px;
@@ -354,11 +351,13 @@ textarea {
   top: 8px;
   right: 8px;
 
+  padding: 0;
   width: 30px;
   height: 30px;
+  outline: unset;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-color: var(--primary-white-color);
+  background-color: transparent;
   transition-property: color;
   transition: var(--std-timing) var(--std-time-func);
 }
@@ -574,24 +573,25 @@ textarea {
 }
 /* ---------------------projects--------------------- */
 .selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 34px;
 }
-.project-link .text {
+.projects__link .text {
   color: var(--primary-text-color);
 }
-.project-link {
+.projects__link {
   display: block;
 }
-.project-link:hover,
-.project-link:focus {
+.projects__link:hover,
+.projects__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.projects .selector {
-  display: flex;
-  justify-content: center;
+.selector {
 }
-.selector .item + .item {
+.selector__item + .selector__item {
   margin-left: 8px;
 }
 .selector-button {
@@ -607,7 +607,7 @@ textarea {
   position: relative;
   overflow: hidden;
 }
-.project-overlay {
+.projects__overlay {
   position: absolute;
   top: 100%;
   width: 100%;
@@ -628,12 +628,12 @@ textarea {
   color: var(--primary-white-color);
   background-color: rgba(33, 150, 243, 0.9);
 }
-.project-link:hover .project-overlay,
-.project-link:focus .project-overlay {
+.projects__link:hover .projects__overlay,
+.projects__link:focus .projects__overlay {
   top: 0;
   transition: var(--std-timing) var(--std-time-func);
 }
-.project-desc {
+.projects__desc {
   border-right: 1px solid var(--primary-grey-color);
   border-bottom: 1px solid var(--primary-grey-color);
   border-left: 1px solid var(--primary-grey-color);
@@ -738,7 +738,7 @@ textarea {
 .subscribe [type="email"] {
   width: 358px;
   height: 50px;
-  padding: 15px 16px;
+  padding: 0px 0px 0px 16px;
   color: var(--primary-white-color);
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
